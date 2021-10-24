@@ -183,7 +183,7 @@ public class InsertMode extends AbstractMode {
 
     @Override
     public void leaveMode(final ModeSwitchHint... hints) {
-        boolean moveCursor = true;
+        boolean moveCursor = editorAdaptor.getConfiguration().get(Options.MOVECURSORLEFT);
         for (final ModeSwitchHint hint: hints) {
             if (hint == InsertMode.DONT_MOVE_CURSOR) {
                 moveCursor = false;

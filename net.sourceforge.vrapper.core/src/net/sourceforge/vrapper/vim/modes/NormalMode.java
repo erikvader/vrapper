@@ -28,6 +28,7 @@ import net.sourceforge.vrapper.utils.LineInformation;
 import net.sourceforge.vrapper.utils.Position;
 import net.sourceforge.vrapper.utils.VimUtils;
 import net.sourceforge.vrapper.vim.EditorAdaptor;
+import net.sourceforge.vrapper.vim.Options;
 import net.sourceforge.vrapper.vim.VimConstants;
 import net.sourceforge.vrapper.vim.commands.AsciiCommand;
 import net.sourceforge.vrapper.vim.commands.BorderPolicy;
@@ -301,8 +302,10 @@ public class NormalMode extends CommandBasedMode {
                     editorAdaptor.getCursorService().setCaret(CaretType.OVERLINE);
                 }
             }
+            
+            boolean virtualedit = editorAdaptor.getConfiguration().get(Options.VIRTUALEDIT);
             // Change position when we hit the line end and no selection exists (we don't clear it)
-            if (line.getEndOffset() == offset && line.getLength() > 0 && selectionLength <= 0) {
+            if (!virtualedit && line.getEndOffset() == offset && line.getLength() > 0 && selectionLength <= 0) {
                 editorAdaptor.setPosition(pos.addViewOffset(-1), stickyColumnPolicy);
             } 
         }
