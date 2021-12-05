@@ -5,6 +5,7 @@ import net.sourceforge.vrapper.log.VrapperLog;
 import net.sourceforge.vrapper.utils.CaretType;
 import net.sourceforge.vrapper.vim.DefaultEditorAdaptor;
 import net.sourceforge.vrapper.vim.EditorAdaptor;
+import net.sourceforge.vrapper.vim.Options;
 import net.sourceforge.vrapper.vim.commands.motions.StickyColumnPolicy;
 import net.sourceforge.vrapper.vim.modes.EditorMode;
 import net.sourceforge.vrapper.vim.modes.InsertMode;
@@ -55,10 +56,11 @@ public class CaretPositionHandler implements CaretListener, MouseListener {
                 String lineContents = w.getLine(lineNo);
                 int lineEndOffset = lineStartOffset + lineContents.length();
 
+                boolean virtualedit = editorAdaptor.getConfiguration().get(Options.VIRTUALEDIT);
                 // Detect if caret was moved after last character. It is possible that the caret is
                 // already at the right position because this mouse click might have dropped us out
                 // of visual mode. In that case NormalMode.placeCursor() did its magic already.
-                if (currentOffset == lineEndOffset) {
+                if (!virtualedit && currentOffset == lineEndOffset) {
                     // Change caret until the user has let go of the mouse button.
                     // We can't move the caret here or we risk changing the user's selection.
                     editorAdaptor.getCursorService().setCaret(
@@ -83,7 +85,8 @@ public class CaretPositionHandler implements CaretListener, MouseListener {
         EditorMode mode = getCurrentMode(editorAdaptor);
         int selectionLength = textViewer.getSelectedRange().y;
 
-        if (!VrapperPlugin.isVrapperEnabled() || !caretMoved
+        boolean virtualedit = editorAdaptor.getConfiguration().get(Options.VIRTUALEDIT);
+        if (virtualedit || !VrapperPlugin.isVrapperEnabled() || !caretMoved
                 || selectionLength > 0 || ! (mode instanceof NormalMode)) {
             // Always reset this flag.
             caretMoved = false;
