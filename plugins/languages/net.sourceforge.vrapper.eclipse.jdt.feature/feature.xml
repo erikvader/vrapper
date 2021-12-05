@@ -2,7 +2,7 @@
 <feature
       id="net.sourceforge.vrapper.eclipse.jdt.feature"
       label="Vrapper - Java Extensions (Optional, requires JDT)"
-      version="0.75.20210730"
+      version="0.75.20211205"
       provider-name="Vrapper Team">
 
    <description url="http://vrapper.sourceforge.net/documentation/">

@@ -6,12 +6,6 @@
    <feature url="features/net.sourceforge.vrapper_0.74.0.jar" id="net.sourceforge.vrapper" version="0.74.0">
       <category name="Vrapper"/>
    </feature>
-   <feature url="features/net.sourceforge.vrapper.plugin.splitEditor_0.75.20210730.jar" id="net.sourceforge.vrapper.plugin.splitEditor" version="0.75.20210730">
-      <category name="Vrapper"/>
-   </feature>
-   <feature url="features/net.sourceforge.vrapper.eclipse.jdt.feature_0.75.20210730.jar" id="net.sourceforge.vrapper.eclipse.jdt.feature" version="0.75.20210730">
-      <category name="Optional Programming Language Plugins"/>
-   </feature>
    <feature url="features/net.sourceforge.vrapper.plugin.argtextobj_0.75.20210730.jar" id="net.sourceforge.vrapper.plugin.argtextobj" version="0.75.20210730">
       <category name="Optional Vimscript Plugins"/>
    </feature>
@@ -36,13 +30,19 @@
    <feature url="features/net.sourceforge.vrapper.plugin.methodtextobj_0.75.20210730.jar" id="net.sourceforge.vrapper.plugin.methodtextobj" version="0.75.20210730">
       <category name="Optional Vimscript Plugins"/>
    </feature>
-   <feature url="features/net.sourceforge.vrapper.plugin.sneak_0.75.20210730.jar" id="net.sourceforge.vrapper.plugin.sneak" version="0.75.20210730">
-      <category name="Optional Vimscript Plugins"/>
-   </feature>
    <feature url="features/net.sourceforge.vrapper.plugin.subwordtextobj_0.75.20210730.jar" id="net.sourceforge.vrapper.plugin.subwordtextobj" version="0.75.20210730">
       <category name="Optional Vimscript Plugins"/>
    </feature>
    <feature url="features/net.sourceforge.vrapper.plugin.surround_0.75.20210730.jar" id="net.sourceforge.vrapper.plugin.surround" version="0.75.20210730">
+      <category name="Optional Vimscript Plugins"/>
+   </feature>
+   <feature url="features/net.sourceforge.vrapper.eclipse.jdt.feature_0.75.20211205.jar" id="net.sourceforge.vrapper.eclipse.jdt.feature" version="0.75.20211205">
+      <category name="Optional Programming Language Plugins"/>
+   </feature>
+   <feature url="features/net.sourceforge.vrapper.plugin.splitEditor_0.75.20211205.jar" id="net.sourceforge.vrapper.plugin.splitEditor" version="0.75.20211205">
+      <category name="Vrapper"/>
+   </feature>
+   <feature url="features/net.sourceforge.vrapper.plugin.sneak_0.75.20211205.jar" id="net.sourceforge.vrapper.plugin.sneak" version="0.75.20211205">
       <category name="Optional Vimscript Plugins"/>
    </feature>
    <category-def name="Vrapper" label="Vrapper">
